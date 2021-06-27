@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"); */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;500;700&family=Fira+Sans:wght@200;300&display=swap");
 
@@ -20,20 +20,17 @@ body,
 }
 
 button {
-  background: none;
-  border: 0;
-  margin: 0;
+  font-family: "Fira Sans", sans-serif;
+  border: none;
+  font-size: 15px;
   padding: 0.05rem 1rem;
   border-radius: 23px;
-  font-size: inherit;
-  font-family: inherit;
   cursor: pointer;
   background: #008c8c;
   color: #fff;
   opacity: 1;
 }
 button:hover {
-  /* color: #60cbff; */
   opacity: 0.8;
 }
 
@@ -46,7 +43,7 @@ button:hover {
 .app-sidebar {
   width: 30%;
   height: 100vh;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #008c8c;
   background: #f4f4f4;
   color: #008c8c;
 }
@@ -54,7 +51,7 @@ button:hover {
 .app-sidebar-header {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 20px;
   font-family: "Cormorant", serif;
   border-bottom: 1px solid #008c8c;
 }
@@ -80,7 +77,7 @@ button:hover {
   font-family: "Fira Sans", sans-serif;
 }
 .app-sidebar-note .delete-icon {
-  color: crimson;
+  color: rgb(231, 69, 40);
 }
 .app-sidebar-note p {
   margin: 10px 0;
@@ -91,7 +88,7 @@ button:hover {
 }
 
 .app-sidebar-note:hover {
-  background: #ddd;
+  background: #e1e5ea;
 }
 .app-sidebar-note.active,
 .app-sidebar-note.active small {
@@ -99,7 +96,7 @@ button:hover {
   color: white;
 }
 
-/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+/* MAIN STYLES */
 
 .cancel-icon {
   margin-top: 1%;
@@ -121,7 +118,7 @@ button:hover {
   height: 100vh;
   line-height: 100vh;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   background: #008c8c;
   font-family: "Cormorant", serif;
   color: #fff;
@@ -129,7 +126,7 @@ button:hover {
 
 /* Editing */
 .app-main-note-edit {
-  padding: 25px;
+  padding: 20px 25px;
 }
 .app-main-note-edit input,
 textarea {
