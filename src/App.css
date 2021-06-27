@@ -1,38 +1,173 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;500;700&family=Fira+Sans:wght@200;300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* GLOBAL STYLES */
+
+body,
 .App {
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  /* background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png); */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0.05rem 1rem;
+  border-radius: 23px;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  background: #008c8c;
+  color: #fff;
+  opacity: 1;
+}
+button:hover {
+  /* color: #60cbff; */
+  opacity: 0.8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* SIDEBAR STYLES */
+
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+  background: #f4f4f4;
+  color: #008c8c;
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  font-family: "Cormorant", serif;
+  border-bottom: 1px solid #008c8c;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Cormorant", serif;
+  font-size: 20px;
+}
+.sidebar-note-desc {
+  font-family: "Fira Sans", sans-serif;
+}
+.app-sidebar-note .delete-icon {
+  color: crimson;
+}
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #999;
+}
+
+.app-sidebar-note:hover {
+  background: #ddd;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background: #008c8c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.cancel-icon {
+  margin-top: 1%;
+  margin-bottom: -1%;
+  margin-left: 96%;
+}
+.app-main {
+  width: 70%;
+  height: 100vh;
+  background: #f4f4f4;
+}
+.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.no-active-note {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  background: #008c8c;
+  font-family: "Cormorant", serif;
+  color: #fff;
+}
+
+/* Editing */
+.app-main-note-edit {
+  padding: 25px;
+}
+.app-main-note-edit input,
+textarea {
+  display: block;
+  border: 1px solid #00203f;
+  background: #f4f4f4;
+  color: #008c8c;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: "Fira Sans", sans-serif;
+}
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
+  font-family: "Cormorant", serif;
+}
+
+/* Preview */
+.app-main-note-preview {
+  overflow-y: scroll;
+  color: #f4f4f4;
+  background: #008c8c;
+  margin-bottom: 20px;
+}
+
+.preview-title {
+  padding: 25px 25px 0 25px;
+  margin: 0;
+  font-family: "Cormorant", serif;
+}
+
+.markdown-preview {
+  padding: 0 25px 25px 25px;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "Fira Sans", sans-serif;
 }
